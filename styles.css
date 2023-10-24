@@ -1,0 +1,115 @@
+:root {
+    --clr-neon: hsl(317 100% 54%);
+    --clr-bg: hsl(323 21% 16%);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column; /* Change the flex direction to column */
+    justify-content: center;
+    align-items: center;
+    background: var(--clr-bg);
+    color: var(--clr-neon);
+    margin: 0;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2f3542;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Montserrat", sans-serif;
+}
+
+.animated-text{
+    font-size: 44px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animated-text span{
+    position: relative;
+}
+
+.animated-text span::before{
+    content: "jonyurisoon";
+    color: #03bcf4;
+    animation: words 20s infinite;
+}
+
+.animated-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #2f3542;
+    border-left: 2px solid #fff;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff7f5000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "jonyurisoon";
+    }
+  
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
+
+h2
+{
+    position: relative;
+    font-size: 6em;
+    letter-spacing: 15px;
+    color: #0e3742;
+    text-transform: uppercase;
+    width: 100%;
+    text-align: center;
+    -webkit-box-reflect: below 1px linear-gradient(transparent, #0004);
+    ;
+    line-height: 0.70em;
+    outline: none;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate
+{
+    0%, 18%, 20%, 50.1%, 60%, 65.1%, 80%, 90.1%, 92%
+    {
+        color: #0e3742;
+        box-shadow: none;
+    }
+    18.1%, 20.1%, 30%, 50%, 60.1%, 65%, 80.1%, 90%, 92.1%, 100%
+    {
+        color: #fff;
+        text-shadow: 0 0 10px #03bcf4,
+        0 0 20px #03bcf4,
+        0 0 40px #03bcf4,
+        0 0 80px #03bcf4,
+        0 0 160px #03bcf4
+    }
+}
